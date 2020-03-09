@@ -1,0 +1,18 @@
+
+%table.table-striped.col-md-10#movies
+  %thead
+    %tr
+      %th Movie Title
+      %th Rating
+      %th Director
+      %th Release Date
+      %th More Info
+  %tbody
+    - @similar_movies.each do |movie|
+      %tr
+        %td= movie.title 
+        %td= movie.rating
+        %td= movie.director
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
+= link_to "Back", movie_path
